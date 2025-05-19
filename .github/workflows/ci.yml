@@ -18,3 +18,4 @@ jobs:
         run: |
           cd build
           ls
+          ls ci_cd_projeto
