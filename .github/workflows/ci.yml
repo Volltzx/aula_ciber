@@ -1,10 +1,10 @@
 name: CI - Snapshot
 run-name: CI snapshot disparada por ${{ github.actor }}
 
-on:
+on:   
   # inicia o workflow manualmente
   workflow_dispatch:
-jobs:
+jobs:  
   build_back:
     name: Build Back
     runs-on: ubuntu-latest
@@ -35,4 +35,4 @@ jobs:
         run: |
           cd build/ci_cd_projeto/frontend
           npm install
-          npm run build
+          npm run build
