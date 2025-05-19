@@ -1,10 +1,10 @@
 name: CI - Snapshot
 run-name: CI snapshot disparada por ${{ github.actor }}
 
-on:   
+on:
   # inicia o workflow manualmente
   workflow_dispatch:
-jobs:  
+jobs:
   snapshot:
     runs-on: ubuntu-latest
     steps:
@@ -17,5 +17,4 @@ jobs:
         shell: bash
         run: |
           cd build
-          ls 
-          ls ci_cd_projeto
+          ls
