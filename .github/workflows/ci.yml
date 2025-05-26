@@ -4,6 +4,17 @@ run-name: CI snapshot disparada por ${{ github.actor }}
 on:   
   # inicia o workflow manualmente
   workflow_dispatch:
+    inputs:
+      tipo_versao:
+        type: choice
+        description: 'Tipo de build'     
+        required: true
+        default: 'minor'
+        options:
+        - patch
+        - minor
+        - major
+
 jobs:  
   build_back:
     name: Build Back
@@ -28,8 +39,8 @@ jobs:
       - name: Upload Zip Backend
         uses: actions/upload-artifact@v4
         with:
-         name: backend
-         path: build/ci_cd_projeto/backend/backend.zip
+          name: backend
+          path: build/ci_cd_projeto/backend/backend.zip
 
   build_front:
     name: Build Front
@@ -65,7 +76,7 @@ jobs:
      - name: Download Zip Frontend
        uses: actions/download-artifact@v4
        with:
-        name: frontend
+         name: frontend
      - name: Download Zip Backend
        uses: actions/download-artifact@v4
        with:
