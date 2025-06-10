@@ -149,7 +149,7 @@ jobs:
           
   empacotar:
     name: Empacotar
-    needs: [GerarVersao, teste_back]
+    needs: [GerarVersao, teste_back, sonarqube]
     runs-on: ubuntu-latest
     steps:
      - name: Download Zip Frontend
