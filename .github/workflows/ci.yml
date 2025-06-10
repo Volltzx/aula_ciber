@@ -152,5 +152,5 @@ jobs:
        with:
          body: Release ${{ needs.GerarVersao.outputs.versao }}
          tag_name: ${{ needs.GerarVersao.outputs.versao }}
-         fail_on_unmatched_files: false
+         fail_on_unmatched_files: true
          files: backend.zip, frontend.zip
